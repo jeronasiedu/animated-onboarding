@@ -143,20 +143,18 @@ class _OnboardingPageState extends State<OnboardingPage> {
                   children: List.generate(
                     onboardingItems.length,
                     (index) {
-                      return Padding(
-                        padding: const EdgeInsets.only(right: 5.0),
-                        child: AnimatedContainer(
-                          height: 3,
-                          width: activePage == index ? 30 : 15,
-                          decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(4),
-                            color: activePage == index
-                                ? Theme.of(context).colorScheme.primary
-                                : Colors.grey,
-                          ),
-                          duration: const Duration(milliseconds: 300),
-                          curve: Curves.easeInOut,
+                      return AnimatedContainer(
+                        height: 3,
+                        margin: const EdgeInsets.only(right: 5.0),
+                        width: activePage == index ? 30 : 15,
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(4),
+                          color: activePage == index
+                              ? Theme.of(context).colorScheme.primary
+                              : Colors.grey,
                         ),
+                        duration: const Duration(milliseconds: 300),
+                        curve: Curves.easeInOut,
                       );
                     },
                   ),
